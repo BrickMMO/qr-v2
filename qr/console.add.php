@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     if (!validate_blank($_POST['name']) || !validate_blank($_POST['url']))
     {
         message_set('QR Code Error', 'There was an error with the provided QR code.', 'red');
-        header_redirect('/qr/add');
+        header_redirect('/console/add');
     }
 
     $hash = string_hash(3);
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             url, 
             image, 
             hash,
-            city_id,
+            user_id,
             created_at,
             updated_at
         ) VALUES (
@@ -36,20 +36,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             "'.addslashes($_POST['url']).'", 
             "'.$image.'",
             "'.$hash.'",
-            '.$_city['id'].',
+            '.$_user['id'].',
             NOW(),
             NOW()
         )';
     mysqli_query($connect, $query);
 
     message_set('QR Success', 'QR code has been successfully created.');
-    header_redirect('/qr/dashboard');
+    header_redirect('/console/dashboard');
 }
 
-define('APP_NAME', 'Events');
+define('APP_NAME', 'QR Codes');
 define('PAGE_TITLE', 'Add QR Code');
-define('PAGE_SELECTED_SECTION', 'community');
-define('PAGE_SELECTED_SUB_PAGE', '/qr/dashboard');
+define('PAGE_SELECTED_SECTION', 'qr-codes');
+define('PAGE_SELECTED_SUB_PAGE', '/console/add');
 
 include('../templates/html_header.php');
 include('../templates/nav_header.php');
@@ -70,8 +70,7 @@ include('../templates/message.php');
     QR Codes
 </h1>
 <p>
-    <a href="/city/dashboard">Dashboard</a> / 
-    <a href="/qr/dashboard">Qr Codes</a> / 
+    <a href="/console/dashboard">Qr Codes</a> / 
     Add QR Code
 </p>
 

@@ -1,6 +1,6 @@
 <?php
 
-// security_check();
+security_check();
 admin_check();
 
 if (isset($_GET['delete'])) 
@@ -8,7 +8,7 @@ if (isset($_GET['delete']))
 
     $query = 'DELETE FROM qrs 
         WHERE id = '.$_GET['delete'].'
-        AND city_id = '.$_city['id'].'
+        AND user_id = '.$_user['id'].'
         LIMIT 1';
     mysqli_query($connect, $query);
 
@@ -17,7 +17,7 @@ if (isset($_GET['delete']))
     mysqli_query($connect, $query);
 
     message_set('Delete Success', 'QR code has been deleted.');
-    header_redirect('/qr/dashboard');
+    header_redirect('/console/dashboard');
     
 }
 
@@ -57,7 +57,7 @@ $qr_count = mysqli_num_rows($result);
 
 <h1 class="w3-margin-top w3-margin-bottom">
     <img
-        src="https://cdn.brickmmo.com/icons@1.0.0/events.png"
+        src="https://cdn.brickmmo.com/icons@1.0.0/qr.png"
         height="50"
         style="vertical-align: top"
     />
@@ -95,19 +95,19 @@ $qr_count = mysqli_num_rows($result);
                     <br>
                     Scan URL: <a href="<?=$record['url'] ?>"><?=$record['url'] ?></a>
                     <br>
-                    Redirect URL: <a href="https://qr.brickmmo.com/<?=$record['hash'] ?>">https://qr.brickmmo.com/<?=$record['hash'] ?></a>
+                    Redirect URL: <a href="<?=ENV_DOMAIN?>/<?=$record['hash'] ?>">https://qr.brickmmo.com/<?=$record['hash'] ?></a>
                 </small>
             </td>
             <td class="bm-table-number">
-                <a href="/qr/logs/<?=$record['id']?>"><?=$record['scans']?></a>
+                <a href="/console/logs/<?=$record['id']?>"><?=$record['scans']?></a>
             </td>
             <td>
-                <a href="/qr/edit/<?=$record['id'] ?>">
+                <a href="/console/edit/<?=$record['id'] ?>">
                     <i class="fa-solid fa-pencil"></i>
                 </a>
             </td>
             <td>
-                <a href="#" onclick="return confirmModal('Are you sure you want to delete the QR code <?=$record['name'] ?>?', '/qr/dashboard/delete/<?=$record['id'] ?>');">
+                <a href="#" onclick="return confirmModal('Are you sure you want to delete the QR code <?=$record['name'] ?>?', '/console/dashboard/delete/<?=$record['id'] ?>');">
                     <i class="fa-solid fa-trash-can"></i>
                 </a>
             </td>
@@ -117,7 +117,7 @@ $qr_count = mysqli_num_rows($result);
 </table>
 
 <a
-    href="/qr/add"
+    href="/console/add"
     class="w3-button w3-white w3-border"
 >
     <i class="fa-solid fa-pen-to-square fa-padding-right"></i> New QR Code

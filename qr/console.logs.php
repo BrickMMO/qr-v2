@@ -8,14 +8,13 @@ if(
     !is_numeric($_GET['key']))
 {
     message_set('Tag Error', 'There was an error with the provided QR code.');
-    header_redirect('/qr/dashboard');
+    header_redirect('/console/dashboard');
 }
 
-define('APP_NAME', 'Events');
+define('APP_NAME', 'QR Codes');
 define('PAGE_TITLE', 'QR Scan Logs');
-define('PAGE_SELECTED_SECTION', 'community');
-define('PAGE_SELECTED_SUB_PAGE', '/qr/dashboard');
-
+define('PAGE_SELECTED_SECTION', 'qr-codes');
+define('PAGE_SELECTED_SUB_PAGE', '/console/dashboard');
 
 include('../templates/html_header.php');
 include('../templates/nav_header.php');
@@ -48,8 +47,7 @@ $result = mysqli_query($connect, $query);
     QR Codes
 </h1>
 <p>
-    <a href="/city/dashboard">Dashboard</a> / 
-    <a href="/qr/dashboard">Qr Codes</a> / 
+    <a href="/console/dashboard">Qr Codes</a> / 
     QR Code Logs
 </p>
 
@@ -60,14 +58,14 @@ $result = mysqli_query($connect, $query);
 <table class="w3-table w3-bordered w3-striped w3-margin-bottom">
     <tr>
         <th>Name</th>
-        <th>ULR</th>
+        <th>URL</th>
         <th>Date</th>
     </tr>
 
     <?php while ($record = mysqli_fetch_assoc($result)): ?>
         <tr>
             <td><?=$record['name']?></td>
-            <td><?=$record['url']?></td>
+            <td><a href="<?=$record['url']?>"><?=$record['url']?></a></td>
             <td><?=time_elapsed_string($record['created_at'])?></td>
         </tr>
     <?php endwhile; ?>
@@ -76,7 +74,6 @@ $result = mysqli_query($connect, $query);
 <?php
 
 // Include footer templates
-include('../templates/modal_city.php');
 include('../templates/main_footer.php');
 include('../templates/debug.php');
 include('../templates/html_footer.php');

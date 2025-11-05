@@ -8,7 +8,7 @@ if(
     !is_numeric($_GET['key']))
 {
     message_set('Tag Error', 'There was an error with the provided QR code.');
-    header_redirect('/qr/dashboard');
+    header_redirect('/console/dashboard');
 }
 elseif ($_SERVER['REQUEST_METHOD'] == 'POST') 
 {
@@ -17,7 +17,7 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST')
     if (!validate_blank($_POST['name']) || !validate_blank($_POST['url']))
     {
         message_set('QR Code Error', 'There was an error with the provided QR code.', 'red');
-        header_redirect('/qr/add');
+        header_redirect('/console/add');
     }
     
     $query = 'UPDATE qrs SET
@@ -29,14 +29,14 @@ elseif ($_SERVER['REQUEST_METHOD'] == 'POST')
     mysqli_query($connect, $query);
 
     message_set('QR Success', 'QR code has been successfully updated.');
-    header_redirect('/qr/dashboard');
+    header_redirect('/console/dashboard');
     
 }
 
-define('APP_NAME', 'Events');
+define('APP_NAME', 'QR Codes');
 define('PAGE_TITLE', 'Edit QR Code');
-define('PAGE_SELECTED_SECTION', 'community');
-define('PAGE_SELECTED_SUB_PAGE', '/qr/dashboard');
+define('PAGE_SELECTED_SECTION', 'qr-codes');
+define('PAGE_SELECTED_SUB_PAGE', '/console/dashboard');
 
 include('../templates/html_header.php');
 include('../templates/nav_header.php');
@@ -64,8 +64,7 @@ $qr = mysqli_fetch_assoc($result);
     QR Codes
 </h1>
 <p>
-    <a href="/city/dashboard">Dashboard</a> / 
-    <a href="/qr/dashboard">Qr Codes</a> / 
+    <a href="/console/dashboard">Qr Codes</a> / 
     Add QR Code
 </p>
 
