@@ -3,7 +3,7 @@
 function user_avatar($id, $absolute = false)
 {
     $user = user_fetch($id);
-    return $user['avatar'] ? $user['avatar'] : 'https://cdn.brickmmo.com/images@1.0.0/no_city.png';
+    return $user['avatar'] ? $user['avatar'] : 'https://cdn.brickmmo.com/images@1.0.0/no_avatar.png';
 }
 
 function user_name($id)
@@ -14,6 +14,11 @@ function user_name($id)
 
 function user_fetch($identifier, $field = false)
 {
+
+    if(ENV_SSO == false)
+    {
+        return $_SESSION['user'];
+    }
 
     global $connect;
 

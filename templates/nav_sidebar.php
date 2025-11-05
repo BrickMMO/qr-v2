@@ -34,7 +34,7 @@ $navigation = navigation_array(PAGE_SELECTED_SUB_PAGE);
 
                 <a
                     class="w3-bar-item w3-button w3-text-<?=$page['colour']?> <?php if($page['url'] == PAGE_SELECTED_SUB_PAGE): ?>bm-selected<?php endif; ?>"
-                    href="<?=(strpos($page['url'], 'http') === 0) ? '' : ENV_CONSOLE_DOMAIN?><?=$page['url']?>"
+                    href="<?=(strpos($page['url'], 'http') === 0) ? '' : ENV_DOMAIN?><?=$page['url']?>"
                 >
                     <?php if(isset($page['icon'])): ?>
                         <?php if(substr($page['icon'], 0, 2) == 'fa'): ?>

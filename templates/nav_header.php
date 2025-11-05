@@ -1,7 +1,7 @@
 <!-- TOP NAVIGATION -->
 <script 
-    src="<?=ENV_LOCAL ? '/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
-    data-console="false"
+    src="<?=ENV_LOCAL ? 'http://local.sso.brickmmo.com:7777/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
+    data-console="true"
     data-local="<?=ENV_LOCAL ? 'true' : 'false'?>"
     data-https="<?=ENV_HTTPS ? 'true' : 'false'?>"
 ></script>

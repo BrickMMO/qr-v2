@@ -19,14 +19,15 @@ include('../templates/login_header.php');
 
     <?php include('../templates/message.php'); ?>
 
+    <a href="<?=ENV_DOMAIN?>/">QR Codes</a> | 
+
     <?php if($_user): ?>
-        <a href="<?=ENV_DOMAIN?>/action/logout">Logout</a> | 
-        <a href="<?=ENV_DOMAIN?>/dashboard">Account Dashboard</a> | 
+        <a href="<?=ENV_SSO_DOMAIN?>/action/logout">Logout</a> | 
+        <a href="<?=ENV_SSO_DOMAIN?>/dashboard">Account Dashboard</a>
     <?php else: ?>
-        <a href="<?=ENV_DOMAIN?>/login">Login</a> | 
-        <a href="<?=ENV_DOMAIN?>/register">Register</a>
+        <a href="<?=ENV_SSO_DOMAIN?>/login">Login</a> | 
+        <a href="<?=ENV_SSO_DOMAIN?>/register">Register</a>
     <?php endif; ?>
-    
 
 </div>
 
