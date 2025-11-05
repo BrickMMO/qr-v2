@@ -70,17 +70,6 @@ $navigation = navigation_array();
 
       <?php if($level['title'] == 'Administration' && $_user['admin'] != 1): ?>
 
-      <?php elseif($level['title'] == 'City Portal' && !$_city): ?>
-
-        <div class="w3-bar-item w3-text-gray bm-caps"><?=$level['title']?></div>
-        <button
-            onclick="location.href='<?=ENV_DOMAIN?>/city/create';"
-            class="w3-border w3-border-gray w3-button w3-margin-left"
-        >
-            <i class="fa-solid fa-plus fa-padding-right"></i>
-            Create City
-        </button>
-
       <?php else: ?>
 
         <div class="w3-bar-item w3-text-gray bm-caps"><?=$level['title']?></div>
