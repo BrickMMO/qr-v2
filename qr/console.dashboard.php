@@ -66,7 +66,7 @@ $qr_count = mysqli_num_rows($result);
 <hr>
 
 <p>
-    Total QR Codes: <span class="w3-tag w3-blue"><?=$qr_count?></span> 
+    Total QR Codes: <span class="w3-tag w3-blue"><?=$qr_count?></span> | 
     Total Scans: <span class="w3-tag w3-blue"><?=$log_count?></span> 
 </p>
 
