@@ -5,7 +5,7 @@ function navigation_array($selected = false)
 
     $navigation = [
         [
-            'title' => 'City Portal',
+            'title' => 'QR Codes',
             'sections' => [
                 [
                     'title' => 'QR Codes',
@@ -21,7 +21,7 @@ function navigation_array($selected = false)
                                     'url' => '/console/dashboard',
                                     'colour' => 'red',
                                 ],[
-                                    'title' => 'New QR Code',
+                                    'title' => 'Add QR Code',
                                     'url' => '/console/add',
                                     'colour' => 'red',
                                 ],[

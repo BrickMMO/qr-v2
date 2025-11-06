@@ -1,7 +1,6 @@
 <?php
 
 security_check();
-admin_check();
 
 if(
     !isset($_GET['key']) || 

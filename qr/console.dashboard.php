@@ -1,7 +1,6 @@
 <?php
 
 security_check();
-admin_check();
 
 if (isset($_GET['delete'])) 
 {
@@ -120,7 +119,7 @@ $qr_count = mysqli_num_rows($result);
     href="/console/add"
     class="w3-button w3-white w3-border"
 >
-    <i class="fa-solid fa-pen-to-square fa-padding-right"></i> New QR Code
+    <i class="fa-solid fa-pen-to-square fa-padding-right"></i> Add QR Code
 </a>
 
 <?php

@@ -7,7 +7,7 @@ function admin_check()
 
     if($_user['admin'] != 1)
     {
-        header_redirect(ENV_DOMAIN.'/dashboard');
+        header_redirect(ENV_DOMAIN.'/');
     }
 
 }

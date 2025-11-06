@@ -1,7 +1,6 @@
 <?php
 
 security_check();
-admin_check();
 
 use Endroid\QrCode\QrCode;
 use Endroid\QrCode\Writer\PngWriter;
