@@ -13,7 +13,7 @@ function date_to_format($date, $format = 'MYSQL')
     if(!is_numeric($date)) $date = strtotime($date);
 
     if($format == 'MYSQL') return date('Y-m-d H:i:s', $date);
-    if($format == 'FULL') return date('l F jS, g:i a Y', $date);    
+    if($format == 'FULL') return date('l F jS Y, g:i a', $date);    
     if($format == 'SHORT') return date('F jS Y, g:i a', $date);
     
 }
