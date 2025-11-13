@@ -45,7 +45,7 @@ if(ENV_LOCAL)
     echo '<ul>';
     foreach($links as $name => $url)
     {
-        echo '<li><a href="'.$url.'" target="_blank">'.$name.'</a></li>';
+        echo '<li><a href="'.$url.'">'.$name.'</a></li>';
     }
     echo '</ul>';
     
