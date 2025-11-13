@@ -8,6 +8,20 @@ function string_hash($length = 10)
 
 }
 
+function string_random($length = 10)
+{
+
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $string = '';
+    
+    for ($i = 0; $i < $length; $i++) {
+        $string .= $characters[rand(0, strlen($characters) - 1)];
+    }
+    
+    return $string;
+
+}
+
 function string_split_name($name)
 {
 
