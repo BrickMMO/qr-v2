@@ -1,8 +1,8 @@
 <script 
     src="<?=ENV_LOCAL ? 'http://local.sso.brickmmo.com:7777/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
-    data-console="false"
+    data-console="true"
     data-menu="false"
-    data-admin="true"
+    data-admin="false"
     data-local="<?=ENV_LOCAL ? 'true' : 'false'?>"
     data-https="<?=ENV_HTTPS ? 'true' : 'false'?>"
 ></script>
@@ -15,7 +15,7 @@
 
     <div class="w3-card-4 w3-border" style="max-width: 300px; position: fixed; top: 68px; right: 10px; z-index: 120" id="">
         
-        <img src="<?=user_avatar($_user['id']);?>" alt="Alps" style="max-width: 100%">
+        <img src="<?=user_avatar($_user['id']);?>" alt="" style="max-width: 100%">
 
         <div class="w3-container w3-white">
 

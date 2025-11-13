@@ -86,7 +86,7 @@ $qr_count = mysqli_num_rows($result);
     <?php while ($record = mysqli_fetch_assoc($result)): ?>
         <tr>
             <td>
-                <img src="<?=$record['image'] ?>" alt="QR Code" width="70">
+                <img src="<?=$record['image'] ?>" alt="" width="70">
             </td>
             <td>
                 <?=$record['name'] ?>
