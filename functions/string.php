@@ -41,3 +41,26 @@ function string_is_base64($string)
     else return false;
 
 }
+
+function string_shorten($text, $limit = 100, $cut_at_space = false) 
+{
+
+    if (strlen($text) <= $limit) 
+    {
+        return $text;
+    }
+
+    $short = substr($text, 0, $limit);
+
+    if ($cut_at_space) 
+    {
+        $last_space = strrpos($short, ' ');
+        if ($last_space !== false) 
+        {
+            $short = substr($short, 0, $last_space);
+        }
+    }
+
+    return rtrim($short) . '...';
+    
+}
