@@ -32,7 +32,7 @@ $log_count = mysqli_num_rows(mysqli_query($connect, $query));
 <main>
 
     <div class="w3-center">
-        <h1>Upcoming events</h1>
+        <h1>Qr Codes</h1>
     </div>
 
     <hr>
