@@ -74,7 +74,7 @@ function generateContent($segmentId)
         'model' => 'gpt-4o-mini',
         'messages' => [
             ['role' => 'system', 'content' => "Write a detailed script"],
-            ['role' => 'user', 'content' => "Write a detailed, engaging LEGO based script for a 5-minute radio segment on " . $segmentName]
+            ['role' => 'user', 'content' => "Write a detailed, engaging LEGO® based script for a 5-minute radio segment on " . $segmentName]
         ],
         'max_tokens' => 1000,
         'temperature' => 0,
@@ -100,7 +100,7 @@ function generateContent($segmentId)
         'model' => 'gpt-4o-mini',
         'messages' => [
             ['role' => 'system', 'content' => "Write a detailed script"],
-            ['role' => 'user', 'content' => "Write a detailed, engaging LEGO based script for a 5-minute radio segment on " . $segmentName]
+            ['role' => 'user', 'content' => "Write a detailed, engaging LEGO® based script for a 5-minute radio segment on " . $segmentName]
         ],
         'max_tokens' => 1000,
         'temperature' => 0,
