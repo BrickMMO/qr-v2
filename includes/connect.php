@@ -36,3 +36,6 @@ else
 {
     // echo "Connection Successfully Establish !!!";
 }
+
+// Set MySQL timezone to EST (UTC-5)
+mysqli_query($connect, "SET time_zone = '-05:00'");

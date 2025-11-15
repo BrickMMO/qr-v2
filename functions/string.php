@@ -64,3 +64,37 @@ function string_shorten($text, $limit = 100, $cut_at_space = false)
     return rtrim($short) . '...';
     
 }
+
+function string_normalize_url($url)
+{
+    // Parse the URL
+    $parsed = parse_url(trim($url));
+    
+    // If parsing failed, return original URL lowercased
+    if ($parsed === false) {
+        return strtolower(trim($url));
+    }
+    
+    // Default to http if no scheme
+    $scheme = isset($parsed['scheme']) ? strtolower($parsed['scheme']) : 'http';
+    
+    // Get host (domain)
+    $host = isset($parsed['host']) ? strtolower($parsed['host']) : '';
+    
+    // Remove www. prefix for consistency
+    $host = preg_replace('/^www\./', '', $host);
+    
+    // Get path and remove trailing slash
+    $path = isset($parsed['path']) ? $parsed['path'] : '/';
+    $path = rtrim($path, '/');
+    if ($path === '') $path = '/';
+    
+    // Get port if specified
+    $port = isset($parsed['port']) ? ':' . $parsed['port'] : '';
+    
+    // Get query string if present
+    $query = isset($parsed['query']) ? '?' . $parsed['query'] : '';
+    
+    // Reconstruct normalized URL (always use https for comparison)
+    return 'https://' . $host . $port . $path . $query;
+}
