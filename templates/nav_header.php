@@ -1,12 +1,3 @@
-<script 
-    src="<?=ENV_LOCAL ? 'http://local.sso.brickmmo.com:7777/bar.js' : 'https://cdn.brickmmo.com/bar@1.1.0/bar.js'?>"
-    data-console="true"
-    data-menu="false"
-    data-admin="false"
-    data-local="<?=ENV_LOCAL ? 'true' : 'false'?>"
-    data-https="<?=ENV_HTTPS ? 'true' : 'false'?>"
-></script>
-
 <div
   id="avatar-options"
   class="w3-modal"
