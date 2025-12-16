@@ -98,10 +98,10 @@ $qr_count = mysqli_num_rows($result);
                 </small>
             </td>
             <td class="bm-table-number">
-                <a href="/console/logs/<?=$record['id']?>"><?=$record['scans']?></a>
+                <a href="<?=ENV_DOMAIN?>/console/logs/<?=$record['id']?>"><?=$record['scans']?></a>
             </td>
             <td>
-                <a href="/console/edit/<?=$record['id'] ?>">
+                <a href="<?=ENV_DOMAIN?>/console/edit/<?=$record['id'] ?>">
                     <i class="fa-solid fa-pencil"></i>
                 </a>
             </td>
@@ -116,7 +116,7 @@ $qr_count = mysqli_num_rows($result);
 </table>
 
 <a
-    href="/console/add"
+    href="<?=ENV_DOMAIN?>/console/add"
     class="w3-button w3-white w3-border"
 >
     <i class="fa-solid fa-pen-to-square fa-padding-right"></i> Add QR Code

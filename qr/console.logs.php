@@ -46,7 +46,7 @@ $result = mysqli_query($connect, $query);
     QR Codes
 </h1>
 <p>
-    <a href="/console/dashboard">Qr Codes</a> / 
+    <a href="<?=ENV_DOMAIN?>/console/dashboard">Qr Codes</a> / 
     QR Code Logs
 </p>
 

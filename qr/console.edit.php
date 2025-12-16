@@ -63,7 +63,7 @@ $qr = mysqli_fetch_assoc($result);
     QR Codes
 </h1>
 <p>
-    <a href="/console/dashboard">Qr Codes</a> / 
+    <a href="<?=ENV_DOMAIN?>/console/dashboard">Qr Codes</a> / 
     Add QR Code
 </p>
 
